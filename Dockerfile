@@ -17,8 +17,4 @@ RUN docker-php-ext-install pdo pdo_mysql mbstring exif pcntl bcmath gd
 # Установка Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-# Установка Symfony CLI
-RUN curl -sS https://get.symfony.com/cli/installer | bash
-RUN mv /root/.symfony5/bin/symfony /usr/local/bin/symfony
-
 WORKDIR /var/www
